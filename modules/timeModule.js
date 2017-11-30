@@ -1,8 +1,9 @@
 var nodeModuleOs = require('os');
+var colors = require('colors');
+
+var sec = nodeModuleOs.uptime();
 
 function changeTime() {
-
-	var sec = nodeModuleOs.uptime();
 
 	//below 3600s
 	var hour = Math.floor(sec / 3600);
@@ -15,17 +16,12 @@ function changeTime() {
 	var seconds = Math.floor((sec % 3600) % 60);
 
 	if (sec >= 3600) {
-		console.log('Aktualny czas działania systemu:');
-		console.log('');
-		console.log(hours + 'h ' + mins + 'm ' + seconds + 's');
+		return console.log(hours + 'h ' + mins + 'm ' + seconds + 's');
 	} else if (sec >= 60) {
-		console.log('Aktualny czas działania systemu:');
-		console.log('');
-		console.log(min + 'm ' + second + 's');
+		return console.log(min + 'm ' + second + 's');
 	} else {
-		console.log('Aktualny czas działania systemu:');
-		console.log('');
-		console.log(second + 's ');
+		return console.log(second + 's ');
 	};
 };
+
 exports.changeTime = changeTime;

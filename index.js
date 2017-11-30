@@ -1,5 +1,5 @@
-var appModules = require('../modules/appModules');
-var timeModule = require('../modules/timeModule')
+var appModules = require('./modules/appModules');
+var timeModule = require('./modules/timeModule')
 
 process.stdin.setEncoding('utf-8');
 

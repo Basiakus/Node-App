@@ -1,0 +1,23 @@
+{
+  "name": "13NodeModule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Basiakus/Node-App.git"
+  },
+  "author": "Adam Basiak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Basiakus/Node-App/issues"
+  },
+  "homepage": "https://github.com/Basiakus/Node-App#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
