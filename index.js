@@ -1,5 +1,8 @@
 var appModules = require('./modules/appModules');
-var timeModule = require('./modules/timeModule')
+var timeModule = require('./modules/timeModule');
+var colors = require('colors');
+var nodeModuleOs = require('os');
+var sec = nodeModuleOs.uptime();
 
 process.stdin.setEncoding('utf-8');
 
@@ -28,7 +31,7 @@ process.stdin.on('readable', function() {
 				break;
 
 			case '3':
-				timeModule.changeTime();
+				console.log(timeModule.changeTime(sec));
 				appModules.navigation();
 				break;
 				
