@@ -31,7 +31,7 @@ process.stdin.on('readable', function() {
 				break;
 
 			case '3':
-				process.stdout.write("Czas od rozpoczecia pracy Systemu");
+				process.stdout.write("Czas od rozpoczecia pracy Systemu: ".red);
 				console.log(timeModule.changeTime(sec));
 				process.stdout.write("\n");
 				appModules.navigation();
