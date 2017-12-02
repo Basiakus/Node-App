@@ -9,9 +9,9 @@ var EventEmitter = event.EventEmitter; // = require('evens').EventEmitter;
 var emitter = new EventEmitter();
 
 emitter.on('beforeCommand', function(instruction) {
-    console.log('YOU PRESSED: '.magenta + instruction);
-    console.log(' ...SENDING'.magenta);
-    console.log('');
+	console.log('YOU PRESSED: '.magenta + instruction);
+	console.log(' ...SENDING'.magenta);
+	console.log('');
 });
 emitter.on('afterCommand', function() {
 	console.log('ACTION FINISHED '.magenta);
@@ -26,13 +26,11 @@ console.log("PC press: 1 | DETAIL press: 2 | Adam's Module press: 3 | EXIT press
 process.stdin.on('readable', function() {
 	var someDataFromAdam = process.stdin.read();
 	if (someDataFromAdam !== null) {
-		var instruction = someDataFromAdam.toString().trim();
 
-		// odpalanie zdarzenia beforeCommand (z parametrem)
-        emitter.emit('beforeCommand', instruction);
+		var instruction = someDataFromAdam.toString().trim();
+		emitter.emit('beforeCommand', instruction); // odpalanie zdarzenia beforeCommand (z parametrem)
 
 		switch (instruction) {
-
 			case '2':
 				console.log(process.env);
 				appModules.navigation();
@@ -43,7 +41,7 @@ process.stdin.on('readable', function() {
 				process.exit();
 				break;
 
-			case '1': 
+			case '1':
 				appModules.pcInformation();
 				appModules.navigation();
 				break;
@@ -54,13 +52,12 @@ process.stdin.on('readable', function() {
 				process.stdout.write("\n");
 				appModules.navigation();
 				break;
-				
+
 			default:
 				process.stderr.write("!!! You writing wrong information !!!\n");
 				process.stdout.write('\n');
 		};
-		// emitowanie zdarzenia afterCommand (bez parametru)
-        emitter.emit('afterCommand');
+		emitter.emit('afterCommand'); // emitowanie zdarzenia afterCommand (bez parametru)
 	}
 
 });
